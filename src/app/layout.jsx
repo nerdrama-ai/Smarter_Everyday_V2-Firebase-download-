@@ -2,10 +2,10 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import { Toaster } from '@/components/ui/toaster'
 
-const poppins = Poppins({ 
+const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-poppins',
-  weight: ['400', '600', '700']
+  weight: ['400', '600', '700'],
 })
 
 export const metadata = {
