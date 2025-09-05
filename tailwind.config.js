@@ -8,7 +8,8 @@ module.exports = {
   './src/pages/**/*.{js,jsx,ts,tsx,mdx}',
   './src/components/**/*.{js,jsx,ts,tsx,mdx}',
   './src/layouts/**/*.{js,jsx,ts,tsx,mdx}',
-  './src/**/*.{js,jsx,ts,tsx,mdx}',   // fallback, covers anything missed
+  './src/**/*.{js,jsx,ts,tsx,mdx}',
+  './**/*.{js,jsx,ts,tsx,mdx}'// fallback, covers anything missed
 ],
   theme: {
     extend: {
