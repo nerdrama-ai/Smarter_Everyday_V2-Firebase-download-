@@ -1,8 +1,7 @@
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, BrainCircuit, Zap, BarChart, Badge, CalendarCheck } from 'lucide-react';
-import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { ArrowRight, BrainCircuit, Zap, BarChart, Badge, CalendarCheck } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function Home() {
   return (
@@ -32,49 +31,51 @@ export default function Home() {
                   Join The Quizway and challenge yourself with daily quizzes. Build your knowledge, earn badges, and compete with friends.
                 </p>
               </div>
-               <div className="w-full max-w-sm mx-auto">
-                 <Button asChild size="lg" className="w-full">
-                    <Link href="/login">
-                      Start Your Streak <Zap className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-               </div>
+              <div className="w-full max-w-sm mx-auto">
+                <Button asChild size="lg" className="w-full">
+                  <Link href="/login">
+                    Start Your Streak <Zap className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
 
-         <section className="w-full pb-12 md:pb-24 lg:pb-32">
-            <div className="container px-4 md:px-6">
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    <Card className="hover:shadow-lg transition-shadow duration-300">
-                        <CardHeader className="flex flex-row items-center gap-4">
-                            <CalendarCheck className="h-10 w-10 text-primary"/>
-                            <CardTitle className="font-headline text-xl">Daily Challenges</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-muted-foreground">Test your knowledge on a new topic every single day. Consistency is key!</p>
-                        </CardContent>
-                    </Card>
-                     <Card className="hover:shadow-lg transition-shadow duration-300">
-                        <CardHeader className="flex flex-row items-center gap-4">
-                            <Badge className="h-10 w-10 text-primary"/>
-                            <CardTitle className="font-headline text-xl">Earn Badges</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-muted-foreground">Unlock achievement badges and medals for your performance and streaks.</p>
-                        </CardContent>
-                    </Card>
-                     <Card className="hover:shadow-lg transition-shadow duration-300">
-                        <CardHeader className="flex flex-row items-center gap-4">
-                            <BarChart className="h-10 w-10 text-primary"/>
-                            <CardTitle className="font-headline text-xl">Track Progress</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                             <p className="text-muted-foreground">Monitor your accuracy and see how you stack up against others.</p>
-                        </CardContent>
-                    </Card>
-                </div>
+        <section className="w-full pb-12 md:pb-24 lg:pb-32">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <Card className="hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="flex flex-row items-center gap-4">
+                  <CalendarCheck className="h-10 w-10 text-primary" />
+                  <CardTitle className="font-headline text-xl">Daily Challenges</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">Test your knowledge on a new topic every single day. Consistency is key!</p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="flex flex-row items-center gap-4">
+                  <Badge className="h-10 w-10 text-primary" />
+                  <CardTitle className="font-headline text-xl">Earn Badges</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">Unlock achievement badges and medals for your performance and streaks.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="flex flex-row items-center gap-4">
+                  <BarChart className="h-10 w-10 text-primary" />
+                  <CardTitle className="font-headline text-xl">Track Progress</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">Monitor your accuracy and see how you stack up against others.</p>
+                </CardContent>
+              </Card>
             </div>
+          </div>
         </section>
       </main>
       <footer className="py-6 border-t">
@@ -83,5 +84,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  );
+  )
 }
