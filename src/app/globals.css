@@ -2,85 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Set font globally */
-body {
-  font-family: var(--font-poppins), sans-serif;
+/* Add your CSS custom properties for theme colors and radius here. */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 47.4% 11.2%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 47.4% 11.2%;
+  --primary: 240 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 10% 60%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 16.7% 97.6%;
+  --muted-foreground: 222.2 47.4% 11.2%;
+  --accent: 16 100% 60%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 240 100% 50%;
+  --radius: 0.5rem;
+  --chart-1: 240 100% 50%;
+  --chart-2: 16 100% 60%;
+  --chart-3: 120 100% 40%;
+  --chart-4: 48 100% 55%;
+  --chart-5: 288 60% 60%;
 }
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 224 20% 10%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 224 20% 10%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 20% 10%;
-
-    --primary: 12 93% 54%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 217.2 32.6% 90%;
-    --secondary-foreground: 224 20% 10%;
-
-    --muted: 217.2 32.6% 90%;
-    --muted-foreground: 224 20% 40%;
-
-    --accent: 45 93% 54%;
-    --accent-foreground: 224 20% 10%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 217.2 32.6% 90%;
-    --input: 217.2 32.6% 90%;
-    --ring: 12 93% 54%;
-
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-
-    --radius: 0.8rem;
-  }
-
-  .dark {
-    --background: 224 20% 10%;
-    --foreground: 210 40% 98%;
-
-    --card: 224 20% 12%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 224 20% 12%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 12 93% 54%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 45 93% 54%;
-    --accent-foreground: 224 20% 12%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 12 93% 54%;
-  }
-
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground antialiased;
-  }
+/* Add dark mode styles if needed */
+.dark {
+  --background: 222.2 47.4% 11.2%;
+  --foreground: 0 0% 100%;
+  --card: 222.2 47.4% 11.2%;
+  --card-foreground: 0 0% 100%;
+  --popover: 222.2 47.4% 11.2%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 240 100% 70%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 240 10% 40%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 217.2 32.2% 17.4%;
+  --muted-foreground: 210 16.7% 97.6%;
+  --accent: 16 100% 70%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 100% 60%;
+  --destructive-foreground: 222.2 47.4% 11.2%;
+  --border: 217.2 32.2% 17.4%;
+  --input: 217.2 32.2% 17.4%;
+  --ring: 240 100% 70%;
+  --chart-1: 240 100% 70%;
+  --chart-2: 16 100% 70%;
+  --chart-3: 120 100% 50%;
+  --chart-4: 48 100% 65%;
+  --chart-5: 288 60% 70%;
 }
