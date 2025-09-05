@@ -3,7 +3,7 @@ import AppHeader from "@/components/AppHeader"
 import AppSidebar from "@/components/AppSidebar"
 import { SidebarProvider, useSidebar } from "@/components/ui/sidebar"
 import { cn } from "@/lib/utils"
-import '.././globals.css'
+import '@/app/globals.css'
 
 function AppLayoutContent({ children }) {
   const { open } = useSidebar()
