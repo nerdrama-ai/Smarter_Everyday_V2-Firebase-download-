@@ -19,6 +19,7 @@ import { useToast } from '@/hooks/use-toast';
 import { mockUsers } from '@/lib/mock-data';
 import { ArrowLeft } from 'lucide-react';
 
+// Validation Schemas
 const mobileSchema = z.object({
   mobile: z.string().regex(/^\d{10}$/, 'Please enter a valid 10-digit mobile number.'),
 });
@@ -37,12 +38,10 @@ const signupSchema = z
     path: ['confirmPin'],
   });
 
-type FormStep = 'mobile' | 'login' | 'signup';
-
 export function AuthForm() {
   const router = useRouter();
   const { toast } = useToast();
-  const [step, setStep] = useState<FormStep>('mobile');
+  const [step, setStep] = useState('mobile'); // "mobile" | "login" | "signup"
   const [mobileNumber, setMobileNumber] = useState('');
 
   const form = useForm({
@@ -60,7 +59,7 @@ export function AuthForm() {
     },
   });
 
-  const handleMobileSubmit = (values: z.infer<typeof mobileSchema>) => {
+  const handleMobileSubmit = (values) => {
     const userExists = mockUsers.some((u) => u.mobileNumber === values.mobile);
     setMobileNumber(values.mobile);
     if (userExists) {
@@ -71,7 +70,7 @@ export function AuthForm() {
     form.reset({ mobile: values.mobile, pin: '', confirmPin: '' });
   };
 
-  const handleLoginSubmit = (values: z.infer<typeof pinSchema>) => {
+  const handleLoginSubmit = (values) => {
     const user = mockUsers.find(
       (u) => u.mobileNumber === mobileNumber && u.pin === values.pin
     );
@@ -91,7 +90,7 @@ export function AuthForm() {
     }
   };
 
-  const handleSignupSubmit = (values: z.infer<typeof signupSchema>) => {
+  const handleSignupSubmit = (values) => {
     // In a real app, you would save the new user to the database.
     console.log('New user created:', { mobile: mobileNumber, pin: values.pin });
     toast({
@@ -104,27 +103,33 @@ export function AuthForm() {
 
   const onSubmit = form.handleSubmit((data) => {
     if (step === 'mobile') {
-      handleMobileSubmit(data as z.infer<typeof mobileSchema>);
+      handleMobileSubmit(data);
     } else if (step === 'login') {
-      handleLoginSubmit(data as z.infer<typeof pinSchema>);
+      handleLoginSubmit(data);
     } else {
-      handleSignupSubmit(data as z.infer<typeof signupSchema>);
+      handleSignupSubmit(data);
     }
   });
 
   const goBack = () => {
     setStep('mobile');
     form.reset({ mobile: mobileNumber, pin: '', confirmPin: '' });
-  }
+  };
 
   return (
     <Form {...form}>
       <form onSubmit={onSubmit} className="space-y-4">
         {step !== 'mobile' && (
-            <Button variant="ghost" size="sm" onClick={goBack} className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
-                <ArrowLeft className="h-4 w-4" />
-                <span>{mobileNumber}</span>
-            </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            onClick={goBack}
+            className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            <span>{mobileNumber}</span>
+          </Button>
         )}
 
         {step === 'mobile' && (
@@ -161,7 +166,9 @@ export function AuthForm() {
 
         {step === 'signup' && (
           <>
-             <p className="text-sm text-center text-muted-foreground">This number isn't registered. Let's create an account.</p>
+            <p className="text-sm text-center text-muted-foreground">
+              This number isn&apos;t registered. Let&apos;s create an account.
+            </p>
             <FormField
               control={form.control}
               name="pin"
