@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, BrainCircuit, Zap, BarChart, Badge, CalendarCheck } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import '../styles/globals.css'
 
 export default function Home() {
   return (
