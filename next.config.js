@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  reactStrictMode: true,   // Enable React strict mode for development best practices
+  swcMinify: true,         // Enable SWC minimizer to improve build size and speed
+
+  /* Keep your existing overrides */
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, // Consider fixing TS errors instead of ignoring, if possible
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // Same for lint errors
   },
   images: {
     remotePatterns: [
