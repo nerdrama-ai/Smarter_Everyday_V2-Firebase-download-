@@ -1,6 +1,5 @@
-import type {NextConfig} from 'next';
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
@@ -28,18 +27,18 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/:path*',
-        destination: `/:path*`,
+        destination: '/:path*',
       },
       {
         source: '/fb-frameworks-test-mission-command',
-        destination: `http://localhost:9002/fb-frameworks-test-mission-command`,
+        destination: 'http://localhost:9002/fb-frameworks-test-mission-command',
       },
       {
         source: '/fb-frameworks-test-mission-command/:path*',
-        destination: `http://localhost:9002/fb-frameworks-test-mission-command/:path*`,
+        destination: 'http://localhost:9002/fb-frameworks-test-mission-command/:path*',
       },
-    ];
+    ]
   },
-};
+}
 
-export default nextConfig;
+module.exports = nextConfig
