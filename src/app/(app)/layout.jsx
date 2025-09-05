@@ -1,11 +1,11 @@
-'use client';
-import AppHeader from "@/components/AppHeader";
-import AppSidebar from "@/components/AppSidebar";
-import { SidebarProvider, useSidebar } from "@/components/ui/sidebar";
-import { cn } from "@/lib/utils";
+'use client'
+import AppHeader from "@/components/AppHeader"
+import AppSidebar from "@/components/AppSidebar"
+import { SidebarProvider, useSidebar } from "@/components/ui/sidebar"
+import { cn } from "@/lib/utils"
 
-function AppLayoutContent({ children }: { children: React.ReactNode }) {
-  const { open } = useSidebar();
+function AppLayoutContent({ children }) {
+  const { open } = useSidebar()
   return (
     <div
       className={cn(
@@ -21,18 +21,13 @@ function AppLayoutContent({ children }: { children: React.ReactNode }) {
         </main>
       </div>
     </div>
-  );
+  )
 }
 
-
-export default function AppLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AppLayout({ children }) {
   return (
     <SidebarProvider>
       <AppLayoutContent>{children}</AppLayoutContent>
     </SidebarProvider>
-  );
+  )
 }
